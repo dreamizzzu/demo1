@@ -5,10 +5,8 @@ public class User {
     private String name;
     private Integer age;
 
-    // 必须添加无参构造器（Spring 解析 JSON 时需要）
     public User() {}
 
-    // getter/setter 方法（必须，否则无法获取/设置字段值）
     public Long getId() {
         return id;
     }

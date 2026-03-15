@@ -53,4 +53,5 @@ public class Result<T> {
     public static <T> Result<T> error(String msg) {
         return new Result<>(500, msg, null);
     }
+
 }

@@ -10,5 +10,4 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return Result.error(500, "服务器异常：" + e.getMessage());
     }
-
 }

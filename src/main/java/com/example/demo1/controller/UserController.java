@@ -32,4 +32,5 @@ public class UserController {
         int a = 1 / 0;
         return Result.success("测试成功");
     }
+    
 }

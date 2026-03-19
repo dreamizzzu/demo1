@@ -14,6 +14,22 @@ public class Result<T> {
         this.data = data;
     }
 
+    public static <T> Result<T> success(T data) {
+        Result<T> result = new Result<>();
+        result.code = ResultCode.SUCCESS.getCode();
+        result.msg = ResultCode.SUCCESS.getMsg();
+        result.data = data;
+        return result;
+    }
+
+    public static <T> Result<T> error(ResultCode resultCode) {
+        Result<T> result = new Result<>();
+        result.code = resultCode.getCode();
+        result.msg = resultCode.getMsg();
+        result.data = null;
+        return result;
+    }
+
     public Integer getCode() {
         return code;
     }
@@ -38,9 +54,9 @@ public class Result<T> {
         this.data = data;
     }
 
-    public static <T> Result<T> success(T data) {
-        return new Result<>(200, "操作成功", data);
-    }
+    //public static <T> Result<T> success(T data) {
+    //    return new Result<>(200, "操作成功", data);
+    //}
 
     public static <T> Result<T> success(String msg, T data) {
         return new Result<>(200, msg, data);

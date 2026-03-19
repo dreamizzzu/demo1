@@ -12,16 +12,16 @@ public class AuthInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
 
         boolean isCreateUser = "POST".equalsIgnoreCase(method) && "/api/users".equals(uri);
-        boolean isGetUser = "GET".equalsIgnoreCase(method) && uri.startsWith("/api/users");
+        boolean isGetUser = "GET".equalsIgnoreCase(method) && uri.startsWith("/api/users/");
 
-        if (isCreateUser && isGetUser) {
+        if (isCreateUser || isGetUser) {
             return true;
         }
 
         String token = request.getHeader("Authorization");
 
         if (token == null || token.isEmpty()) {
-            response.setContentType("text/html;charset=utf-8");
+            response.setContentType("application/json;charset=utf-8");
             String errorJson = "{\"code\": 401, \"msg\": \"登录凭证已缺失，请重新登录\"}";
             response.getWriter().write(errorJson);
             return false;

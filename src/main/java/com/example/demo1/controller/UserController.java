@@ -1,22 +1,43 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.common.Result;
+import com.example.demo1.dto.UserDTO;
 import com.example.demo1.entity.User;
+import com.example.demo1.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
 
+    @Autowired
+    private UserService userService;
+
+    /**
+     * 新用户注册
+     * @param userDTO
+     * @return
+     */
+    @PostMapping
+    public Result<String> register(@RequestBody UserDTO userDTO){
+        return userService.register(userDTO);
+    }
+
+    /**
+     * 用户登录
+     * @param userDTO
+     * @return
+     */
+    @PostMapping("/login")
+    public Result<String> login(@RequestBody UserDTO userDTO){
+        return userService.login(userDTO);
+    }
+
     @GetMapping("/{id}")
     public Result<String> getUser(@PathVariable("id") Long id) {
         String data = "查询成功，正在返回 ID 为 " + id + " 的用户信息";
         return Result.success(data);
-    }
-
-    @PostMapping
-    public String createUser(@RequestBody User user) {
-        return "新增成功，接收到用户：" + user.getName() + ", 年龄: " + user.getAge();
     }
 
     @PutMapping("/{id}")

@@ -21,6 +21,7 @@ public class UserController {
      */
     @PostMapping
     public Result<String> register(@RequestBody UserDTO userDTO){
+
         return userService.register(userDTO);
     }
 
@@ -31,13 +32,13 @@ public class UserController {
      */
     @PostMapping("/login")
     public Result<String> login(@RequestBody UserDTO userDTO){
+
         return userService.login(userDTO);
     }
 
     @GetMapping("/{id}")
     public Result<String> getUser(@PathVariable("id") Long id) {
-        String data = "查询成功，正在返回 ID 为 " + id + " 的用户信息";
-        return Result.success(data);
+        return  userService.getUserById(id);
     }
 
     @PutMapping("/{id}")
@@ -47,6 +48,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable("id") Long id) {
+
         return "删除成功，已移除 ID 为 " + id + " 的用户";
     }
 

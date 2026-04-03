@@ -41,10 +41,10 @@ public class UserController {
         return  userService.getUserById(id);
     }
 
-    @PutMapping("/{id}")
+    /*@PutMapping("/{id}")
     public String updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         return "更新成功，ID " + id + " 的用户已修改为: " + user.getName();
-    }
+    }*/
 
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable("id") Long id) {

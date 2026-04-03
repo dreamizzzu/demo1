@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 public class User {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private String name;
-    private Integer age;
+    //private String name;
+    //private Integer age;
     private String username;
     private String password;
     public User() {}
@@ -22,21 +22,21 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    //public String getName() {
+    //    return name;
+    //}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    //public void setName(String name) {
+    //    this.name = name;
+    //}
 
-    public Integer getAge() {
-        return age;
-    }
+    //public Integer getAge() {
+    //    return age;
+    //}
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+    //public void setAge(Integer age) {
+    //    this.age = age;
+    //}
 
     public String getUsername(){
         return username;

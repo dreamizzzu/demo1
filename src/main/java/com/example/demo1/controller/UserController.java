@@ -57,5 +57,11 @@ public class UserController {
         int a = 1 / 0;
         return Result.success("测试成功");
     }
-    
+
+    @GetMapping("/page")
+    public Result<Object> getUserPage(
+            @RequestParam(defaultValue = "1") Integer pageNum,
+            @RequestParam(defaultValue = "5") Integer pageSize) {
+        return userService.getUserPage(pageNum, pageSize);
+    }
 }

@@ -1,17 +1,10 @@
 package com.example.demo1.config;
 
-import com.example.demo1.interceptor.AuthInterceptor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AuthInterceptor())
-                .addPathPatterns("/api/**")
-                .excludePathPatterns("/api/users/login");
-    }
+    // 移除了 addInterceptors 方法，只保留类结构
+    // 后续如果需要配置CORS、视图解析器等，仍可以在这里添加方法
 }

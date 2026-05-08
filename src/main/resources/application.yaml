@@ -1,5 +1,4 @@
 spring:
-
   data:
     redis:
       host: 127.0.0.1
@@ -15,9 +14,9 @@ spring:
     username: postgres
     password: 123456
 
-  jwt:
-    secret: your-very-long-secret-key-1234567890abcdefghijklmn
-    expiration: 86400000
+  ai:
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
 
 mybatis-plus:
   configuration:

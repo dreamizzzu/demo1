@@ -8,6 +8,7 @@ import com.example.demo1.dto.UserDTO;
 import com.example.demo1.entity.User;
 import com.example.demo1.mapper.UserInfoMapper;
 import com.example.demo1.mapper.UserMapper;
+import com.example.demo1.security.JwtUtil;
 import com.example.demo1.vo.UserDetailVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -35,6 +36,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserInfoMapper userInfoMapper;
 
+    @Autowired
+    private JwtUtil jwtUtil;
 
     /**
      * 注册账号
@@ -83,7 +86,10 @@ public class UserServiceImpl implements UserService {
         if (!dbUser.getPassword().equals(userDTO.getPassword())) {
             return Result.error(ResultCode.PASSWORD_ERROR);
         }
-        return Result.success("登录成功！");
+
+        // 4. 登录成功，生成JWT令牌并返回（替换了原来的UUID假token逻辑）
+        String jwt = jwtUtil.generateToken(userDTO.getUsername());
+        return Result.success(jwt);
     }
 
     /**

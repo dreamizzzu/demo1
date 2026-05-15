@@ -2,7 +2,7 @@ package com.example.demo1.mapper;
 
 import com.example.demo1.entity.UserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.demo1.vo.UserDetailVO;
+import com.example.demo1.model.vo.UserDetailVO;
 import org.apache.ibatis.annotations.*;
 
 @Mapper

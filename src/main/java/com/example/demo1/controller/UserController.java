@@ -1,11 +1,10 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.common.Result;
-import com.example.demo1.dto.UserDTO;
-import com.example.demo1.entity.User;
+import com.example.demo1.model.dto.UserDTO;
 import com.example.demo1.entity.UserInfo;
 import com.example.demo1.service.UserService;
-import com.example.demo1.vo.UserDetailVO;
+import com.example.demo1.model.vo.UserDetailVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

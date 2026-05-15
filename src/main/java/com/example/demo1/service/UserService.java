@@ -2,8 +2,8 @@ package com.example.demo1.service;
 
 import com.example.demo1.entity.UserInfo;
 import com.example.demo1.common.Result;
-import com.example.demo1.dto.UserDTO;
-import com.example.demo1.vo.UserDetailVO;
+import com.example.demo1.model.dto.UserDTO;
+import com.example.demo1.model.vo.UserDetailVO;
 
 public interface UserService {
     Result<String> register(UserDTO userDTO);

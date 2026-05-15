@@ -1,23 +1,22 @@
-package com.example.demo1.service;
+package com.example.demo1.service.Impl;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.demo1.common.Result;
 import com.example.demo1.common.ResultCode;
-import com.example.demo1.dto.UserDTO;
+import com.example.demo1.model.dto.UserDTO;
 import com.example.demo1.entity.User;
 import com.example.demo1.mapper.UserInfoMapper;
 import com.example.demo1.mapper.UserMapper;
 import com.example.demo1.security.JwtUtil;
-import com.example.demo1.vo.UserDetailVO;
+import com.example.demo1.service.UserService;
+import com.example.demo1.model.vo.UserDetailVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+
 import java.util.concurrent.TimeUnit;
 import com.example.demo1.entity.UserInfo;
 
